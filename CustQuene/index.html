@@ -1,0 +1,218 @@
+<html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>顾客排队</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/CustQuene/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/CustQuene/css/2.css">
+    <link rel="stylesheet" type="text/css" href="/CustQuene/css/bootstrap.min.css">
+    <!--用来设定tab-->
+    <link rel="stylesheet" type="text/css" href="/CustQuene/css/jq22.css">
+
+</head>
+
+<body>
+    <div class="wholescreen" id="backPage">
+        <div class="container">
+            <!--等候桌位按钮-->
+            <div class="bs">
+                <div class="row">
+                    <div class="col-md-9">
+                    </div>
+                    <div class="col-md-3">
+                        <button class="mybtn" id="toOnQuene">等候桌位</button>
+                    </div>
+                </div>
+            </div>
+            <!--end-->
+
+            <!--桌位情况 tab-->
+            <div class="row" id="quenetabs">
+                <!--<div class="col-md-1"></div>-->
+                <div class="col-md-12">
+                    <ul id="tabs">
+                        <li><a href="#" title="tab1">1-2人<span class="circle" id="circle1"></span></a></li>
+                        <li><a href="#" title="tab2">3-4人<span class="circle" id="circle2"></span></a></li>
+                        <li><a href="#" title="tab3">5-6人<span class="circle" id="circle3"></span></a></li>
+                        <li><a href="#" title="tab4">7人上<span class="circle" id="circle4"></span></a></li>
+                        <li><a href="#" title="tab5">总情况<span class="circle"></span></a></li>
+                    </ul>
+                    <div id="custQueneTab">
+                        <div id="tab1">
+                            <!--<span class="tablePre right" />-->
+                            <table cellspacing="0" id="tabTable1" class="tabTable right">
+                                <tr class="titleTable" style="height: 30px;">
+                                    <td class="num">序列号</td>
+                                    <td class="phone">顾客</td>
+                                    <td class="number">排号数</td>
+                                    <td class="opera">操作</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="tab2" class="">
+                            <!--<span class="tablePre" />-->
+                            <table cellspacing="0" id="tabTable2" class="tabTable right">
+                                <tr class="titleTable">
+                                    <td class="num">序列号</td>
+                                    <td class="phone">顾客</td>
+                                    <td class="number">排号数</td>
+                                    <td class="opera">操作</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="tab3">
+                            <!--<span class="tablePre" />-->
+                            <table cellspacing="0" id="tabTable3" class="tabTable right">
+                                <tr class="titleTable">
+                                    <td class="num">序列号</td>
+                                    <td class="phone">顾客</td>
+                                    <td class="number">排号数</td>
+                                    <td class="opera">操作</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="tab4">
+                            <!--<span class="tablePre" />-->
+                            <table cellspacing="0" id="tabTable4" class="tabTable right">
+                                <tr class="titleTable">
+                                    <td class="num">序列号</td>
+                                    <td class="phone">顾客</td>
+                                    <td class="number">排号数</td>
+                                    <td class="opera">操作</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="tab5">
+                            <!--<span class="tablePre" />-->
+                            <table cellspacing="0" id="tabTable5" class="tabTable right">
+                                <tr class="titleTable">
+                                    <td class="num">序列号</td>
+                                    <td class="phone">顾客</td>
+                                    <td class="number">排号数</td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end-->
+        </div>
+    </div>
+    <!--弹窗-->
+    <div class="popup " id="popupDiv">
+        <div class="queneInfo" id="queneInfo">
+            <h2>排队</h2>
+            <form class="form-horizontal queneInfoForm" action="" method="post" id="queneForm">
+                <div class="form-group">
+                    <label for="CustNum" class="col-sm-5 control-label formtitle">用餐人数</label>
+                    <div class="col-sm-5">
+                        <!--下拉框-->
+                        <select class="form-control" id="custNum">
+                            <option value="0">1-2人</option>
+                            <option value="1">3-4人</option>
+                            <option value="2">5-6人</option>
+                            <option value="3">7人以上</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="custPhone" class="col-sm-5 control-label formtitle">手机号</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="custPhone" placeholder="请输入您的手机号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="custName" class="col-sm-5 control-label formtitle">姓名</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="custName" placeholder="请输入您的姓名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-5">
+                        <button type="buttob" class="btn btn-primary" id="confirmCustInfo">确认提交</button>
+                    </div>
+                    <div class="col-sm-5">
+                        <button type="button" class="btn btn-primary" id="cancelCustInfo">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--end-->
+
+    <!-- Javascript -->
+    <!-- JS -->
+    <script src="/CustQuene/js/jquery-1.8.2.min.js"></script>
+    <script src="/CustQuene/js/supersized.3.2.7.min.js"></script>
+
+    <script>
+        jQuery(function($) {
+            $.supersized({
+                // 功能
+                slide_interval: 4000, // 转换之间的长度
+                transition: 1, // 0 - 无，1 - 淡入淡出，2 - 滑动顶，3 - 滑动向右，4 - 滑底，5 - 滑块向左，6 - 旋转木马右键，7 - 左旋转木马
+                transition_speed: 1000, // 转型速度
+                performance: 1, // 0 - 正常，1 - 混合速度/质量，2 - 更优的图像质量，三优的转换速度//（仅适用于火狐/ IE浏览器，而不是Webkit的）
+                // 大小和位置
+                min_width: 0, // 最小允许宽度（以像素为单位）
+                min_height: 0, // 最小允许高度（以像素为单位）
+                vertical_center: 1, // 垂直居中背景
+                horizontal_center: 1, // 水平中心的背景
+                fit_always: 0, // 图像绝不会超过浏览器的宽度或高度（忽略分钟。尺寸）
+                fit_portrait: 1, // 纵向图像将不超过浏览器高度
+                fit_landscape: 0, // 景观的图像将不超过宽度的浏览器
+                // 组件
+                slide_links: 'blank', // 个别环节为每张幻灯片（选项：假的，'民'，'名'，'空'）
+                slides: [ // 幻灯片影像
+                    {
+                        image: '/CustQuene/img/2.jpg'
+                    }, {
+                        image: '/CustQuene/img/1.jpg'
+                    },
+                    // {image : 'img/3.jpg'}
+                ]
+            });
+        });
+    </script>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#custQueneTab div").hide(); // Initially hide all content
+            $("#tabs li:first").attr("id", "current"); // Activate first tab
+            $("#custQueneTab div:first").fadeIn(); // Show first tab content
+
+            $('#tabs a').click(function(e) {
+                e.preventDefault();
+                $("#custQueneTab div").hide(); //Hide all content
+                $("#tabs li").attr("id", ""); //Reset id's
+                $(this).parent().attr("id", "current"); // Activate this
+                $('#' + $(this).attr('title')).fadeIn(); // Show content for 
+            });
+        });
+    </script>
+    <script src="/CustQuene/js/scripts.js"></script>
+    <script src="/CustQuene/js/forcustquene.js"></script>
+    <!--按人数显示桌子-->
+    <script src="/CustQuene/js/getTableDisplay.js"></script>
+    <script src="/CustQuene/js/getGlobalTableDisplay.js"></script>
+    <script src="/CustQuene/js/getGlobalEmptyTables.js"></script>
+    <script src="/CustQuene/js/getEmptyTable.js"></script>
+    <script src="/CustQuene/js/getQueue.js"></script>
+    <!--<script src="/CustQuene/js/123.js"></script>-->
+    <!--   <script src="／CustQueue/js/upTable.js"></script> -->
+</body>
+
+</html>
+
+</html>

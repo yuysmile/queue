@@ -1,0 +1,95 @@
+/******kun style******/
+
+
+/*
+ *
+ * Template Name: Fullscreen Customer Queue
+ * Description: Customer Queue Template with an Information Popup
+ * Author: Zhangkun
+ * Author URI: 
+ *
+ */
+
+.bordershow {
+    border: 1px solid yellow;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.wholescreen {
+    margin: 0;
+    position: relative;
+}
+
+.mybtn {
+    height: 45px;
+    line-height: 45px;
+    width: 100px;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 100px;
+}
+
+
+/*.mytop {
+    height: 50px;
+    width: 80%;
+    margin: 0 auto;
+}*/
+
+
+/*弹窗div*/
+
+.popup {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+
+
+/*内部弹窗*/
+
+.queneInfo {
+    position: relative;
+    width: 380px;
+    height: auto;
+    margin: 150px auto 0 auto;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.queneInfoForm {
+    margin-top: 35px;
+}
+
+.formtitle {
+    font-size: 18px;
+    font-weight: 200px;
+}
+
+.showquenelist {
+    display: none;
+}
+
+.choosecustnum {
+    width: 60px;
+    height: 27px;
+    border: 1px solid yellow;
+}
+
+
+/*桌位tab*/
+
+.quenetabs {
+    width: 100%;
+}
